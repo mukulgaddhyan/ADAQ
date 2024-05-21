@@ -1,0 +1,76 @@
+# Product Management API
+
+## Endpoints
+
+### POST /products
+Create a new product.
+
+**Request:**
+- Body: `multipart/form-data`
+  - name: string
+  - description: string
+  - modelNumber: string
+  - sku: string
+  - variants: JSON string (array of variants)
+  - images: array of files (one image per variant)
+
+**Response:**
+- Status: 201
+- Body: JSON object of the created product
+
+### GET /products
+Retrieve all products.
+
+**Request:**
+- Query: `country` (optional)
+
+**Response:**
+- Status: 200
+- Body: JSON array of products
+
+### GET /products/:id
+Retrieve a single product by ID.
+
+**Request:**
+- Params: `id` (Product ID)
+
+**Response:**
+- Status: 200
+- Body: JSON object of the product
+
+### PUT /products/:id
+Update a product by ID.
+
+**Request:**
+- Params: `id` (Product ID)
+- Body: `multipart/form-data`
+  - name: string (optional)
+  - description: string (optional)
+  - modelNumber: string (optional)
+  - sku: string (optional)
+  - variants: JSON string (array of variants, optional)
+  - images: array of files (one image per variant, optional)
+
+**Response:**
+- Status: 200
+- Body: JSON object of the updated product
+
+### DELETE /products/:id
+Delete a product and its variants by ID.
+
+**Request:**
+- Params: `id` (Product ID)
+
+**Response:**
+- Status: 200
+- Body: JSON object with a message of deletion
+
+### DELETE /variants/:id
+Delete a variant by ID.
+
+**Request:**
+- Params: `id` (Variant ID)
+
+**Response:**
+- Status: 200
+- Body: JSON object with a message of deletion
