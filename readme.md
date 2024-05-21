@@ -3,7 +3,7 @@
 ## Setup
 
 1. Clone the repository:
-    git clone https://github.com/yourusername/product-management.git
+    git clone https://github.com/mukulgaddhyan/product-management.git
     cd product-management
 
 2. Install dependencies:
